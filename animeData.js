@@ -6,6 +6,11 @@ const animeData = [
         year: 2023,
         episodes: 12,
         imagePath: 'AnimeImagePath/OIP (1).jpg',
+        voice: 'Anilibria',
+        episodeList: [
+            {number: 1, url: 'https://kodikplayer.com/seria/1090328/a60078e04157973fe4200023aabece02/720p'},
+            {number: 2, url: 'https://anilibria.top/anime/video/episode/e4d1b6c7-b80b-431b-996f-91f5ff653c1f'},
+        ],
     },
     {
         id: 2,
@@ -14,6 +19,8 @@ const animeData = [
         year: 2025,
         episodes: 12,
         imagePath: 'AnimeImagePath/kaoruHanaWa.jpg',
+        voice: 'Anilibria',
+        episodeList: [],
     },
     {
         id: 3,
@@ -22,5 +29,7 @@ const animeData = [
         year: 2013,
         episodes: 87,
         imagePath: 'AnimeImagePath/attackOnTitan.jpg',
+        voice: 'Anilibria',
+        episodeList: [],
     },
 ];
