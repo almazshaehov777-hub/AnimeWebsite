@@ -27,8 +27,8 @@ body {
     height: 35px;
     border: 0px;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.2);
     transition: 0.2s ease;
 }
 .back-btn:hover{

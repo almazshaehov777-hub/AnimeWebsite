@@ -22,20 +22,29 @@ if(anime){
 const epis = document.getElementById('episode');
 let html = '';
 
-for(let i = 1; i<=anime.episodes; ++i){
-    let videoUrl = '#';
+
+for(let i = 1; i<=anime.episodeListAni.length; ++i){
+    /*let videoUrl = '#';
     if(anime.episodeList && anime.episodeList[i-1]){
         videoUrl = anime.episodeList[i-1] || '#';
-    }
+    }*/
     html += `
-    <div class="episode-btn" data-url="${videoUrl}" style="width: 150px; height: 50px; color: white">
+    <div class="episode-btn" style="width: 150px; height: 50px; color: white" id="episodeBtn" data-number=${anime.episodeListAni[i-1].number}>
     Эпизод ${i}
     </div>
     `;
 }
 epis.innerHTML = html;
 
-document.querySelectorAll('.episode-btn').forEach(btn => {
+const videoBtn = document.querySelectorAll('.episode-btn');
+videoBtn.forEach(btn => {
+    btn.addEventListener('click', () =>{
+        const num = btn.getAttribute('data-number');
+        window.open(`video.html?id=${anime.id}&number=${num}`, '_blank');
+    });
+});
+
+/*document.querySelectorAll('.episode-btn').forEach(btn => {
     btn.addEventListener('click', () =>{
         const url = btn.getAttribute('data-url');
         if(url && url !== '#'){
@@ -44,4 +53,4 @@ document.querySelectorAll('.episode-btn').forEach(btn => {
             alert('ссылка не добавлена');
         }
     });
-});
+});*/
