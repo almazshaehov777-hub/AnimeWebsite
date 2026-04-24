@@ -1,7 +1,7 @@
 .bg{
     background: #1e2124;
     color: white;
-    height: 70px;
+    height: 85px;
     display: flex;
     align-items: center;
 }
@@ -10,11 +10,50 @@ html, body{
     padding: 0;
 }
 .logo{
-    margin-left: 100px;
+    position: relative;
+    left: 100px;
     font-size: 25px;
-    background: -webkit-linear-gradient(left, #f500dd, #b000bd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e3e3e3;
+}
+.tap{
+    color: #FF4D6D;
+}
+.bgFooter{
+    display: flex;
+    background: #1e2124;
+    color: white;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+.anilibria{
+    position: relative;
+    margin-left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.GitHubImg{
+    position: relative;
+    margin-right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.GitHub{
+    display: inline-block;
+}
+.bgFooter>p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
 }
 html{
     background: #282b30;

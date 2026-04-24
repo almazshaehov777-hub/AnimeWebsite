@@ -1,7 +1,7 @@
 .bg{
     background: #1e2124;
     color: white;
-    height: 70px;
+    height: 85px;
     display: flex;
     align-items: center;
 }
@@ -10,11 +10,65 @@ html, body{
     padding: 0;
 }
 .logo{
-    margin-left: 100px;
+    position: absolute;
+    left: 100px;
     font-size: 25px;
-    background: -webkit-linear-gradient(left, #f500dd, #b000bd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e3e3e3;
+}
+.tap{
+    color: #FF4D6D;
+}
+.bgFooter{
+    display: flex;
+    background: #1e2124;
+    color: white;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 200px;
+}
+.anilibria{
+    position: relative;
+    margin-left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.GitHubImg{
+    position: relative;
+    margin-right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.GitHub{
+    display: inline-block;
+}
+.bgFooter>p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
+.btnBack{
+    width: 45px;
+    height: 40px;
+    margin-left: 30px;
+    background: #424549;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.btnBack:hover{
+    background: #3a3d41;
 }
 html{
     background: #282b30;
@@ -23,6 +77,7 @@ html{
     border-radius: 24px;
     overflow: hidden;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 .anime-title{
     display: flex;

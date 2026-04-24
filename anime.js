@@ -3,6 +3,7 @@ const animeID = parseInt(urlParams.get('id'));
 
 const anime = animeData.find(a => a.id === animeID);
 const animeContent = document.getElementById('anime-content');
+const buttonBack = document.getElementById('btnBack');
 
 document.title = anime.title;
 
@@ -54,3 +55,7 @@ videoBtn.forEach(btn => {
         }
     });
 });*/
+
+buttonBack.addEventListener('click', () => {
+    history.back();
+});
