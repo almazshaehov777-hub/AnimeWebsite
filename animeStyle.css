@@ -229,10 +229,10 @@ html{
 }
 .episode-btn{
     position: relative;
-    width: 250px;
+    width: 300px;
     height: 50px;
     padding: 25px;
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 15px;
     left: 50%;
     transform: translateX(-50%);
@@ -251,4 +251,79 @@ html{
 .content{
     flex-wrap: wrap;
 }
+}
+
+
+
+
+/*планшеты*/
+@media(min-width: 768px){
+    @media(max-width: 1023px){
+.bg{
+    height: 85px;
+}
+.logo{
+    left: 100px;
+    font-size: 25px;
+}
+.bgFooter{
+    height: 100px;
+    font-size: 20px;
+    margin-top: 200px;
+}
+.anilibria{
+    margin-left: 35px;
+    top: 50%;
+}
+.GitHubImg{
+    margin-right: 35px;
+    top: 50%;
+}
+.bgFooter>p{
+    top: 50%;
+}
+.btnBack{
+    width: 45px;
+    height: 40px;
+    margin-left: 30px;
+}
+.AnimeImg{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.anime-title{
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.info>p{
+    font-size: 18px;
+    margin-top: 0;
+}
+#rating{
+    margin-top: 50px;
+}
+.info>h1{
+    width: 400px;
+}
+.episode-btn{
+    width: 150px;
+    height: 50px;
+    padding: 25px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.episodes{
+    max-width: 1100px;
+    grid-template-columns: repeat(3, 25%);
+}
+.con{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.episode-btn:hover{
+    transform: translateY(-3px);
+}
+    }
 }

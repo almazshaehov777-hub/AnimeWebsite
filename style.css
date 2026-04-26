@@ -235,10 +235,8 @@ html{
     font-size: 20px;
     gap: 15px;
 }
-
-
 .rating{
-    padding: 1px;
+    padding: 4px;
     padding-left: 4px;
     padding-right: 4px;
 }
@@ -259,4 +257,68 @@ html{
     margin: 0;
     margin-top: 10px;
 }
+}
+
+
+
+
+/*планшеты*/
+@media(min-width: 768px){
+    @media(max-width: 1023px){
+.bg{
+    height: 85px;
+}
+.logo{
+    left: 100px;
+    font-size: 25px;
+}
+.anilibria{
+    margin-left: 35px;
+}
+.GitHubImg{
+    margin-right: 35px;
+}
+.card{
+    width: 250px;
+    height: auto;
+}
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.title, .details{
+    margin-left: 15px;
+}
+.cardInfo{
+    height: 120px;
+    font-size: 20px;
+    gap: 15px;
+}
+.rating{
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.buttonDemo{
+    margin-top: 15px;
+    width: 250px;
+    height: 40px;
+}
+#buttonClose{
+    font-size: 22px;
+    margin-left: 20px;
+}
+.modalHeader{
+    height: 50px;
+    font-size: 18px;
+}
+.animeInfo{
+    margin: 0;
+    margin-top: 10px;
+}
+#animeGrid{
+    justify-content: center;
+}
+    }
 }
