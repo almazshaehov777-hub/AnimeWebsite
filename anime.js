@@ -9,7 +9,7 @@ document.title = anime.title;
 
 if(anime){
     animeContent.innerHTML = `
-        <img src="${anime.imagePath}" width="300" class="AnimeImg">
+        <div class="imageContainer"><img src="${anime.imagePath}" class="AnimeImg"></div>
         <div class="info">
         <h1 style="color: white" class="anime-title">${anime.title}</h1>
         <p class="anime-title" id="rating">Рейтинг: ${anime.rating}★</p>
@@ -30,7 +30,7 @@ for(let i = 1; i<=anime.episodeListAni.length; ++i){
         videoUrl = anime.episodeList[i-1] || '#';
     }*/
     html += `
-    <div class="episode-btn" style="width: 150px; height: 50px; color: white" id="episodeBtn" data-number=${anime.episodeListAni[i-1].number}>
+    <div class="episode-btn" style="color: white" id="episodeBtn" data-number=${anime.episodeListAni[i-1].number}>
     Эпизод ${i}
     </div>
     `;
