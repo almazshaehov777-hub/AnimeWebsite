@@ -1,9 +1,13 @@
-function renderCard(){
+const genre = document.getElementById('selectGenre');
+let currentGenre = 'all';
+currentGenre = genre.value;
+
+function renderCard(animeArray = animeData){
     const container = document.getElementById('animeGrid');
     let html = '';
 
-    for(let i = 0; i<animeData.length; ++i){
-        const anime = animeData[i];
+    for(let i = 0; i<animeArray.length; ++i){
+        const anime = animeArray[i];
         html += `
     <div class="card" data-id="${anime.id}">
     <div class="info">
@@ -77,3 +81,22 @@ modal.onclick = (e) => {
         btnClose.onclick = () => modal.classList.remove('show');
     }
 }*/
+
+function filter(){
+    let anime = [...animeData];
+
+    if(currentGenre !== 'all'){
+        anime = anime.filter(a => 
+            a.genre.toLowerCase() === currentGenre.toLowerCase()
+        );
+    }
+
+    renderCard(anime);
+}
+
+genre.addEventListener('change', (e) => {
+    currentGenre = e.target.value;
+    filter();
+});
+
+filter();

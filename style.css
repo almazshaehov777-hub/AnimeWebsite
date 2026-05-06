@@ -3,6 +3,7 @@
     color: white;
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 html, body{
     margin: 0;
@@ -126,6 +127,30 @@ html{
 }
 #buttonClose:hover{
     color: lightgray;
+}
+.genre{
+    position: relative;
+    left: 77%;
+    top: 50%;
+    transform: translate(-77%, -50%);
+    width: 120px;
+    height: 30px;
+    border: 2px solid black;
+    background: rgb(236, 142, 142);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s ease;
+    cursor: pointer;
+    font-size: 16px;
+}
+.genre:hover{
+    background: rgb(238, 106, 106);
+}
+.genre>option{
+    background: rgb(236, 142, 142);
+    font-size: 17px;
+    font-family: Freemono, monospace;
 }
 
 

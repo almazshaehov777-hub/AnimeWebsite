@@ -7,6 +7,7 @@ const animeData = [
         episodes: 12,
         imagePath: 'AnimeImagePath/OIP (1).jpg',
         voice: 'Anilibria',
+        genre: 'romance',
         episodeListAni: [
             {number: 1, url: 'https://anilibria.top/anime/video/episode/65b97e63-1203-496a-8355-f9a2679315bf'},
             {number: 2, url: 'https://anilibria.top/anime/video/episode/e4d1b6c7-b80b-431b-996f-91f5ff653c1f'},
@@ -44,6 +45,7 @@ const animeData = [
         episodes: 13,
         imagePath: 'AnimeImagePath/kaoruHanaWa.jpg',
         voice: 'Anilibria',
+        genre: 'romance',
         episodeListAni: [
             {number: 1, url: 'https://anilibria.top/anime/video/episode/9f53bb97-ad12-4d5f-90d5-7079e3506956'},
             {number: 2, url: 'https://anilibria.top/anime/video/episode/9f61fb71-8c12-4753-84a7-0e800b6f03ad'},
@@ -68,7 +70,25 @@ const animeData = [
         episodes: 87,
         imagePath: 'AnimeImagePath/attackOnTitan.jpg',
         voice: 'Anilibria',
+        genre: 'action',
         episodeListAni: [],
         episodeListKodik: [],
     },
+    {
+        id: 4,
+        title: 'Я подружился со второй самой симпатичной девушкой в классе',
+        rating: 7.7,
+        year: 2026,
+        episodes: 12,
+        imagePath: 'AnimeImagePath/6fb22bd7-1914-4524-8c9a-3c9b35a3409a.jpg',
+        voice: 'Anilibria',
+        genre: 'romance',
+        episodeListAni: [
+            {number: 1, url: 'https://anilibria.top/anime/video/episode/a17ec6e0-d307-4258-a1d8-bd6c38e0d79f'},
+            {number: 2, url: 'https://anilibria.top/anime/video/episode/a18cee42-063b-44b8-a0e9-0b37cdd3b55d'},
+            {number: 3, url: 'https://anilibria.top/anime/video/episode/a19addeb-bb73-4d03-9391-def3bedff04f'},
+            {number: 4, url: 'https://anilibria.top/anime/video/episode/a1a991de-0845-467c-8f38-4f0b44f0d7c1'},
+            {number: 5, url: 'https://anilibria.top/anime/video/episode/a1b725cc-fb71-4df0-926d-f1015fc7f4e6'},
+        ],
+    }
 ];
