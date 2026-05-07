@@ -1,34 +1,45 @@
 const urlParams = new URLSearchParams(window.location.search);
 const animeID = parseInt(urlParams.get('id'));
 
-const anime = animeData.find(a => a.id === animeID);
+async function shikimoriFetch(endpoint) {
+    const proxy = 'https://corsproxy.io/?url=';
+    const url = 'https://shikimori.one/api/' + endpoint;
+    const response = await fetch(proxy + encodeURIComponent(url));
+    return response.json();
+}
+
 const animeContent = document.getElementById('anime-content');
 const buttonBack = document.getElementById('btnBack');
 
-document.title = anime.title;
 
+
+async function loadAnime(){
+    const anime = await shikimoriFetch(`animes/${animeID}`);
+    document.title = anime.russian;
 if(anime){
     animeContent.innerHTML = `
-        <div class="imageContainer"><img src="${anime.imagePath}" class="AnimeImg"></div>
+        <div class="imageContainer"><img src="https://shikimori.one${anime.image?.original}" class="AnimeImg"></div>
         <div class="info">
-        <h1 style="color: white" class="anime-title">${anime.title}</h1>
-        <p class="anime-title" id="rating">Рейтинг: ${anime.rating}★</p>
-        <p class="anime-title">Год выпуска: ${anime.year}</p>
+        <h1 style="color: white" class="anime-title">${anime.russian}</h1>
+        <p class="anime-title" id="rating">Рейтинг: ${anime.score}★</p>
+        <p class="anime-title">Год выпуска: ${anime.aired_on.split('-')[0]}</p>
         <p class="anime-title">Эпизоды: ${anime.episodes} эп.</p>
-        <p class="anime-title">Озвучка: ${anime.voice}</p>
         </div>
     `
 }
+}
 
-const epis = document.getElementById('episode');
+loadAnime();
+
+/*const epis = document.getElementById('episode');
 let html = '';
 
 
 for(let i = 1; i<=anime.episodeListAni.length; ++i){
-    /*let videoUrl = '#';
+    let videoUrl = '#';
     if(anime.episodeList && anime.episodeList[i-1]){
         videoUrl = anime.episodeList[i-1] || '#';
-    }*/
+    }
     html += `
     <div class="episode-btn" style="color: white" id="episodeBtn" data-number=${anime.episodeListAni[i-1].number}>
     Эпизод ${i}
@@ -36,7 +47,6 @@ for(let i = 1; i<=anime.episodeListAni.length; ++i){
     `;
 }
 epis.innerHTML = html;
-
 const videoBtn = document.querySelectorAll('.episode-btn');
 videoBtn.forEach(btn => {
     btn.addEventListener('click', () =>{
@@ -54,8 +64,8 @@ videoBtn.forEach(btn => {
             alert('ссылка не добавлена');
         }
     });
-});*/
-
+});
+*/
 buttonBack.addEventListener('click', () => {
     history.back();
 });

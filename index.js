@@ -2,22 +2,29 @@ const genre = document.getElementById('selectGenre');
 let currentGenre = 'all';
 currentGenre = genre.value;
 
-function renderCard(animeArray = animeData){
+async function shikimoriFetch(endpoint) {
+    const proxy = 'https://corsproxy.io/?url=';
+    const url = 'https://shikimori.one/api/' + endpoint;
+    const response = await fetch(proxy + encodeURIComponent(url));
+    return response.json();
+}
+
+async function renderCard(){
+    const anime = await shikimoriFetch('animes?limit=30&order=ranked');
     const container = document.getElementById('animeGrid');
     let html = '';
 
-    for(let i = 0; i<animeArray.length; ++i){
-        const anime = animeArray[i];
+    for(const a of anime){
         html += `
-    <div class="card" data-id="${anime.id}">
+    <div class="card" data-id="${a.id}">
     <div class="info">
-    <img src="${anime.imagePath}" alt="${anime.title}">
+    <img src="https://shikimori.one${a.image?.original}" alt="${a.name}">
     <div class="cardInfo">
-        <div class="title">${anime.title}</div>
+        <div class="title">${a.russian}</div>
             <div class="details">
-                <span class="rating">${anime.rating}</span>
+                <span class="rating">${a.score}</span>
                 <br>
-                <span class="year">${anime.year} • ${anime.episodes} эп.</span>
+                <span class="year">${a.aired_on.split('-')[0]} • ${a.episodes} эп.</span>
             </div>
         </div>
         </div>
@@ -91,7 +98,7 @@ function filter(){
         );
     }
 
-    renderCard(anime);
+    renderCard();
 }
 
 genre.addEventListener('change', (e) => {

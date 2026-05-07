@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Anime List</title></head>
+<body style="background:#1e2124">
+    <div id="grid"></div>
+    
+    <script>
+        async function load() {
+            const res = await fetch('https://api.jikan.moe/v4/top/anime?limit=24');
+            const data = await res.json();
+            
+            let html = '';
+            for (let i = 0; i < data.data.length; i++) {
+                const a = data.data[i];
+                html += `
+                    <div style="display:inline-block;width:200px;margin:10px;background:#282b30;border-radius:12px;cursor:pointer"
+                         onclick="window.open('https://myanimelist.net/anime/${a.mal_id}')">
+                        <img src="${a.images.jpg.image_url}" width="200" height="280" style="border-radius:12px 12px 0 0">
+                        <h3 style="color:white;text-align:center;margin:10px">${a.title_english || a.title}</h3>
+                        <p style="color:#aaa;text-align:center">⭐ ${a.score || '?'} | ${a.year || '?'}</p>
+                    </div>
+                `;
+            }
+            document.getElementById('grid').innerHTML = html;
+        }
+        load();
+    </script>
+</body>
+</html>
