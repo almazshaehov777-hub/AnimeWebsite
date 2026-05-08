@@ -24,6 +24,7 @@ if(anime){
         <p class="anime-title" id="rating">Рейтинг: ${anime.score}★</p>
         <p class="anime-title">Год выпуска: ${anime.aired_on.split('-')[0]}</p>
         <p class="anime-title">Эпизоды: ${anime.episodes} эп.</p>
+        <p class="anime-title">Жанры: ${anime.genres.map(genre => genre.russian || genre.name).join(', ')}</p>
         </div>
     `
 }
@@ -69,3 +70,36 @@ videoBtn.forEach(btn => {
 buttonBack.addEventListener('click', () => {
     history.back();
 });
+
+
+async function loadEpisodeBtn(){
+    const episode = document.getElementById('episode');
+    const a = await shikimoriFetch(`animes/${animeID}`);
+    let ep = '';
+
+    for(let i = 0; i<a.episodes; ++i){
+        episodeNum = i + 1;
+        ep += `<div class="episode-btn" style="color: white" id="episodeBtn">Эпизод ${episodeNum}</div>`;
+    }
+
+    episode.innerHTML = ep;
+}
+
+loadEpisodeBtn();
+
+
+async function loadEpisode(){
+    const prom = await fetch(`https://hianime-api-iy4s.onrender.com/api/episodes/${animeID}`);
+    const episodes = await prom.json();
+
+    const getEp = episodes.episodes[0].episodeID;
+    const stream = await fetch(`https://hianime-api-iy4s.onrender.com/api/stream?id=${getEp}&type=sub&server=HD-2`);
+    const res = await stream.json();
+
+    return {
+        episodeList: episodes.episodes,
+        streamList: res.sources,
+    };
+}
+
+loadEpisode();

@@ -107,3 +107,28 @@ genre.addEventListener('change', (e) => {
 });
 
 filter();
+
+
+
+// Загружаем базу данных
+async function loadAnimeDatabase() {
+    const response = await fetch('anime-offline-database-minified.json');
+    const data = await response.json();
+    const animeList = data.data; // Массив со всеми аниме
+    
+    console.log(`Загружено аниме: ${animeList.length}`);
+    
+    // Пример: найти аниме по ID из Shikimori
+    const shikimoriId = 1535; // ID из вашего URL
+    const anime = animeList.find(a => 
+        a.sources.includes(`https://myanimelist.net/anime/${shikimoriId}`)
+    );
+    
+    if (anime) {
+        alert('Найдено:', anime.title);
+        console.log('Ссылки на эпизоды:', anime.episodes); // Количество эпизодов
+        console.log('Постер:', anime.picture);
+        console.log('Тип:', anime.type);
+        console.log('Тэги:', anime.tags);
+    }
+}
